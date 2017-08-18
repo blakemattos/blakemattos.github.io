@@ -1,3 +1,10 @@
+html {
+  background: #4EA5F2;
+  height: 100%;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
 body {
   height: 100%;
   margin: 0;
