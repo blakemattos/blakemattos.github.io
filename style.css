@@ -1,55 +1,69 @@
-html {
-  background: #4EA5F2;
-  height: 100vh;
-  font-family: 'Noto Sans', sans-serif;
+:root { 
+  --bg-color: #fcfcfc; 
+
+}
+
+body {
+    background: var(--bg-color);
 }
 
 
-body {
-  height: 100vh;
-  margin: 0;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background: #4EA5F2;
-  /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#4EA5F2, #3783C6);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#4EA5F2, #3783C6);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#4EA5F2, #3783C6);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#4EA5F2, #3783C6);
+.header { grid-area: header; }
+.footer { grid-area: footer; }
+.main { grid-area: main; }
+.left { grid-area: left; }
+.right { grid-area: right;
+  min-height: 100vh;
+overflow: hidden;
 }
 
 .container {
-top: 25vh;
-left: 25vw;
-position: fixed;
+    display: grid;
+    grid-template-areas: "header header header"
+                         "left main right"
+                         "footer footer footer";
+    grid-template-columns: 5% 1fr 5%;
+    grid-template-rows: 100px 
+                        1fr
+                        100px;
+    min-height: 100vh;
 }
 
-.block {
-width: 50vw;
-height: 50vh;  
-text-align: center;
-vertical-align: middle;
-line-height: 50vh;
-font-size: 10vh;
-/*border: 1px red solid;*/
+   
+
+.blue-details {
+-ms-transform: rotate(-15deg); /* IE 9 */
+    -webkit-transform: rotate(-15deg); /* Chrome, Safari, Opera */
+    transform: translateX(-50px) rotate(-15deg) translateY(80px);
 }
 
-.menu-dot {
-  background: #fff;
-  width: .8em;
-  height: .8em;
-border-radius: 50%;
-margin: 2em 0 0 2em;
-opacity: .5;
+.baby-blue {
+  background-color: #63F0FE;
+  height: 50px;
+  width: 200%;
 }
 
-.menu-dot:hover {
-  opacity: 1;
-  box-shadow: 0 .1em 0 0 rgba(31,65,95,0.20);
-  transition: all 0.2s ease-in-out .2s;
+.deep-sky-blue {
+  background-color: #00C2F3;
+  height: 50px;
+  width: 200%;
+  margin-top: 10px; 
 }
 
 
+
+@media screen and (max-width: 600px) {
+    .hg {
+        grid-template-areas: "header"
+                             "navigation"
+                             "main"
+                             "ads"
+                             "footer";
+        grid-template-columns: 100%;
+        grid-template-rows: 100px 
+                            50px 
+                            1fr
+                            50px 
+                            30px;
+    }
+}
